@@ -47,7 +47,14 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager());
         Map<String, String> filterMap = new HashMap<>();
         shiroFilterFactoryBean.setLoginUrl("/login");
+        filterMap.put("/swagger-ui/**", "anon");
+        filterMap.put("/swagger/**", "anon");
+        filterMap.put("/webjars/**", "anon");
         filterMap.put("/**", "authc");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/swagger-ui.html/**", "anon");
+        filterMap.put("/**/v3/api-docs", "anon");
+
         //错误页面，认证不通过跳转
        // shiroFilterFactoryBean.setUnauthorizedUrl("/error");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
