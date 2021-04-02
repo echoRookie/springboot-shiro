@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author yangjun6
  * @date 2021-03-31 17:34
  */
+@ControllerAdvice
 public class MyExceptionHander {
     @ExceptionHandler
     @ResponseBody
