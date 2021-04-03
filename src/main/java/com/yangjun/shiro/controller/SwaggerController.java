@@ -18,12 +18,12 @@ public class SwaggerController {
     @Async
     @ApiOperation(value ="测试")
     @GetMapping(value = "/hello")
-    public String hello(){
+    public void hello(){
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "hello";
+        System.out.println("hello");;
     }
 }
